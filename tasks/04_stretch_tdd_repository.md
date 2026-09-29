@@ -15,7 +15,6 @@ class.
 | `UserRepository` interface | `src/Exercises/Exercise3/IUserRepository.cs` |
 | Create `ConcreteUserRepository` | a new file, `src/Exercises/Exercise3/ConcreteUserRepository.cs` |
 | Create the test class `UserRepositoryTest` | it already exists as a skeleton: `tests/Exercises.Tests/Exercise3_Stretch_ConcreteUserRepositoryTests.cs` |
-| Solution | `solutions/Exercises.Solutions/ConcreteUserRepository.cs` and `Exercise3_Stretch_ConcreteUserRepositoryTests.cs` |
 
 This is the one place in these exercises where you **do** add to `src/`. Everywhere else,
 the code under test is given and you only write tests.
@@ -65,8 +64,8 @@ This is the guide's own step list, translated to this repository:
 3. Create the test class. It already exists here:
    `tests/Exercises.Tests/Exercise3_Stretch_ConcreteUserRepositoryTests.cs`. Add
    `using Exercises.Exercise3;` at the top once your class exists.
-4. Start creating the `Register` tests. Write **one** test. Delete its `Skip`. Run it. Watch
-   it fail. That red is not a setback, it is the evidence that the test can detect the thing
+4. Start creating the `Register` tests. Write **one** test. Delete its `[Ignore(...)]` line.
+   Run it. Watch it fail. That red is not a setback, it is the evidence that the test can detect the thing
    it claims to test.
 5. Create the implementation of `ConcreteUserRepository.Register()` as you write the test:
    just enough code to turn it green, and no more.

@@ -10,7 +10,6 @@ VS Code with the C# Dev Kit, or Rider, or work in a terminal.
 | The guide says | Here |
 | --- | --- |
 | Repository: the `exercise2` package | `src/Exercises/Exercise2/UserService.cs` |
-| Solution | `solutions/Exercises.Solutions/Exercise2_UserServiceTests.cs` (look afterwards, not before) |
 
 **One mapping to know.** Java's `IllegalArgumentException` becomes .NET's
 `ArgumentException`, and Java's bare `RuntimeException` becomes `InvalidOperationException`.
@@ -75,7 +74,7 @@ The assertion you want is:
 ArgumentException error = Assert.Throws<ArgumentException>(
     () => _service.Register("bob", "Codes123"));
 
-Assert.Equal("Username must contain at least 4 characters", error.Message);
+Assert.That(error.Message, Is.EqualTo("Username must contain at least 4 characters"));
 ```
 
 Three things are going on there:
@@ -87,8 +86,9 @@ Three things are going on there:
   apart. A test that checks the type alone would pass even if the wrong rule fired.
 
 One worked example is already written and passing: it is row 2 of the table above, with the
-password corrected to `"Codesss"`. The other nineteen tests are stubs marked
-`[Fact(Skip = "...")]`. Delete each `Skip` as you implement it.
+password corrected to `"Codesss"`. The other nineteen tests are stubs, each marked `[Test]`
+with an `[Ignore("TODO - ...")]` under it. Delete each `[Ignore(...)]` line as you implement
+the test it belongs to.
 
 **To run them:**
 

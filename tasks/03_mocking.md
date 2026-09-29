@@ -8,7 +8,6 @@ This exercise relies on the **`User`** and **`UserController`** classes and the
 | --- | --- |
 | Repository: the `exercise3` package | `src/Exercises/Exercise3/` |
 | `UserRepository` interface | `IUserRepository.cs`. The .NET convention prefixes interface names with `I`, which also leaves the plain name free for the stretch task's implementation |
-| Solution | `solutions/Exercises.Solutions/Exercise3_UserControllerTests.cs` |
 
 ---
 
@@ -72,8 +71,10 @@ controller.Register(new User(0, "bobby", "Codes123"));
 repository.Verify(r => r.Register(It.IsAny<User>()), Times.Once);  // check it was used
 ```
 
-The test class already creates a fresh mock and controller for every test, in its
-constructor, so you can use the `_repository` and `_controller` fields directly.
+The test class already creates a fresh mock and controller for every test, in its `[SetUp]`
+method, so you can use the `_repository` and `_controller` fields directly. `[SetUp]` is
+NUnit's equivalent of JUnit's `@BeforeEach`: it runs before each test, and it is what stops
+one test's mock set-up leaking into the next.
 
 The **repository** methods being mocked are: `IUserRepository.Exists()`,
 `IUserRepository.Register()` and `IUserRepository.Login()`.
@@ -100,5 +101,5 @@ dotnet test --filter "FullyQualifiedName~Exercise3_UserControllerTests"
   straight through to the repository. That is faithful to the Java original, and it is the
   boundary the guide is describing when it says the repository handles invalid usernames.
   Write the test that pins it down.
-- `User` has value equality, so `Assert.Equal(expectedUser, actualUser)` compares field by
-  field. You do not need to compare properties one at a time.
+- `User` has value equality, so `Assert.That(actualUser, Is.EqualTo(expectedUser))` compares
+  field by field. You do not need to compare properties one at a time.

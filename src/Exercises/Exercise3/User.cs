@@ -24,7 +24,7 @@ public class User
     public string Password { get; set; }
 
     // Value equality, matching the Java equals()/hashCode() pair.
-    // Tests rely on this: Assert.Equal(expectedUser, actualUser) compares field by field.
+    // Tests rely on this: Assert.That(actual, Is.EqualTo(expected)) compares field by field.
     public override bool Equals(object obj)
     {
         if (ReferenceEquals(this, obj)) return true;

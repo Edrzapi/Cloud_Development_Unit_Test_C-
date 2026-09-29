@@ -14,25 +14,32 @@ namespace Exercises.Tests;
 ///   5. Tidy up, then go back to step 3 for the next test.
 ///
 /// Add "using Exercises.Exercise3;" at the top once your class exists, and delete each
-/// Skip as you write the test it belongs to.
+/// [Ignore] as you write the test it belongs to.
+///
+/// You will want a [SetUp] method that gives every test a fresh repository, the way the
+/// other two exercise classes do. Add one once your class exists.
 /// </summary>
+[TestFixture]
 public class Exercise3_Stretch_ConcreteUserRepositoryTests
 {
-    [Fact(Skip = "TODO: stretch task. Create ConcreteUserRepository first, then write this.")]
+    [Test]
+    [Ignore("TODO - stretch task. Create ConcreteUserRepository first, then write this.")]
     public void Exists_UsernameNotStored_ReturnsFalse()
     {
         // Should assert that a brand new, empty repository does not know any username.
         Assert.Fail("Not implemented yet");
     }
 
-    [Fact(Skip = "TODO: stretch task.")]
+    [Test]
+    [Ignore("TODO - stretch task.")]
     public void Exists_UsernameAlreadyRegistered_ReturnsTrue()
     {
         // Should register a user, then assert Exists returns true for that username.
         Assert.Fail("Not implemented yet");
     }
 
-    [Fact(Skip = "TODO: stretch task.")]
+    [Test]
+    [Ignore("TODO - stretch task.")]
     public void Register_NewUser_StoresUserAndReturnsIt()
     {
         // Should assert the returned user matches what went in, and that Exists now finds
@@ -40,7 +47,8 @@ public class Exercise3_Stretch_ConcreteUserRepositoryTests
         Assert.Fail("Not implemented yet");
     }
 
-    [Fact(Skip = "TODO: stretch task.")]
+    [Test]
+    [Ignore("TODO - stretch task.")]
     public void Login_MatchingUsernameAndPassword_ReturnsStoredUser()
     {
         // Should register a user, then assert logging in with the same details returns
@@ -48,7 +56,8 @@ public class Exercise3_Stretch_ConcreteUserRepositoryTests
         Assert.Fail("Not implemented yet");
     }
 
-    [Fact(Skip = "TODO: stretch task.")]
+    [Test]
+    [Ignore("TODO - stretch task.")]
     public void Login_WrongPassword_DoesNotReturnAUser()
     {
         // Should assert what your design does on a bad password: throw, or return null.

@@ -11,7 +11,6 @@ VS Code with the C# Dev Kit, or Rider, or just work in a terminal with `dotnet b
 | The guide says | Here |
 | --- | --- |
 | Exercise: the `exercise1` package | `src/Exercises/Exercise1/Calculator.cs` |
-| Solution | `solutions/Exercises.Solutions/Exercise1_CalculatorTests.cs` (look afterwards, not before) |
 
 ---
 
@@ -58,9 +57,10 @@ development of tests for the methods of this class.
 **The file you edit:** `tests/Exercises.Tests/Exercise1_CalculatorTests.cs`
 
 One worked example is already written and passing. Copy its shape. The other twelve tests
-are stubs marked `[Fact(Skip = "TODO: implement me, then delete this Skip")]`. For each one:
+are stubs, each carrying a `[Test]` attribute with an `[Ignore("TODO - ...")]` attribute
+underneath it. For each one:
 
-1. Delete the `Skip` so the test actually runs.
+1. Delete the `[Ignore(...)]` line so the test actually runs.
 2. Replace `Assert.Fail("Not implemented yet")` with your arrange, act and assert.
 
 **To run them:**
@@ -78,7 +78,8 @@ dotnet test --filter "FullyQualifiedName~Exercise1"
 **Done looks like:** all 13 tests in `Exercise1_CalculatorTests` passing, none skipped.
 Across the whole solution the skipped count drops from 51 to 39.
 
-A note on comparing doubles: `Assert.Equal(expected, actual)` on two doubles is an exact
-comparison, and floating point arithmetic rarely lands exactly where you expect. Use the
-overload that takes a precision, `Assert.Equal(0.3, actual, 10)`, when that bites. Deciding
-which of your rows needs it is part of the exercise.
+A note on comparing doubles: `Assert.That(actual, Is.EqualTo(expected))` on two doubles is
+an exact comparison, and floating point arithmetic rarely lands exactly where you expect.
+Add a tolerance when that bites:
+`Assert.That(actual, Is.EqualTo(0.3).Within(0.0000000001))`. Deciding which of your rows
+needs it is part of the exercise.

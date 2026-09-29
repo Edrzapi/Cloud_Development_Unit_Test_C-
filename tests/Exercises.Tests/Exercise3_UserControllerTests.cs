@@ -20,14 +20,18 @@ namespace Exercises.Tests;
 ///   mock.Verify(r =&gt; r.Register(user), Times.Once)             assert a call happened
 ///   mock.Verify(r =&gt; r.Register(It.IsAny&lt;User&gt;()), Times.Never) assert it did not
 /// </summary>
+[TestFixture]
 public class Exercise3_UserControllerTests
 {
-    // A fresh mock and controller for each test.
-    private readonly Mock<IUserRepository> _repository = new Mock<IUserRepository>();
-    private readonly UserController _controller;
+    private Mock<IUserRepository> _repository;
+    private UserController _controller;
 
-    public Exercise3_UserControllerTests()
+    // A fresh mock and controller for each test. [SetUp] is NUnit's @BeforeEach.
+    [SetUp]
+    public void SetUp()
     {
+        _repository = new Mock<IUserRepository>();
+
         // Constructor injection: this is where the mock replaces the real repository.
         _controller = new UserController(_repository.Object);
     }
@@ -36,7 +40,7 @@ public class Exercise3_UserControllerTests
     // WORKED EXAMPLE. Registering a valid user: the controller should ask the repository
     // whether the username exists, and then store the user.
     // ---------------------------------------------------------------------------------
-    [Fact]
+    [Test]
     public void Register_ValidUser_StoresUserViaRepository()
     {
         // Arrange
@@ -52,7 +56,7 @@ public class Exercise3_UserControllerTests
         User actual = _controller.Register(input);
 
         // Assert: the right value came back ...
-        Assert.Equal(saved, actual);
+        Assert.That(actual, Is.EqualTo(saved));
         // ... and the controller really did talk to the repository, exactly once.
         _repository.Verify(r => r.Exists("bobby"), Times.Once);
         _repository.Verify(r => r.Register(input), Times.Once);
@@ -62,7 +66,8 @@ public class Exercise3_UserControllerTests
     // Register
     // ---------------------------------------------------------------------------------
 
-    [Fact(Skip = "TODO: implement me, then delete this Skip")]
+    [Test]
+    [Ignore("TODO - implement me, then delete this [Ignore] line")]
     public void Register_NullUser_ThrowsArgumentException()
     {
         // Should assert the message "User must not be null", and that the repository was
@@ -70,42 +75,48 @@ public class Exercise3_UserControllerTests
         Assert.Fail("Not implemented yet");
     }
 
-    [Fact(Skip = "TODO: implement me, then delete this Skip")]
+    [Test]
+    [Ignore("TODO - implement me, then delete this [Ignore] line")]
     public void Register_NullUsername_ThrowsArgumentException()
     {
         // Should assert the message "Username must not be null".
         Assert.Fail("Not implemented yet");
     }
 
-    [Fact(Skip = "TODO: implement me, then delete this Skip")]
+    [Test]
+    [Ignore("TODO - implement me, then delete this [Ignore] line")]
     public void Register_WhitespaceOnlyUsername_ThrowsArgumentException()
     {
         // Should assert the message "Username must not be whitespace only".
         Assert.Fail("Not implemented yet");
     }
 
-    [Fact(Skip = "TODO: implement me, then delete this Skip")]
+    [Test]
+    [Ignore("TODO - implement me, then delete this [Ignore] line")]
     public void Register_NullPassword_ThrowsArgumentException()
     {
         // Should assert the message "Password must not be null".
         Assert.Fail("Not implemented yet");
     }
 
-    [Fact(Skip = "TODO: implement me, then delete this Skip")]
+    [Test]
+    [Ignore("TODO - implement me, then delete this [Ignore] line")]
     public void Register_WhitespaceOnlyPassword_ThrowsArgumentException()
     {
         // Should assert the message "Password must not be whitespace only".
         Assert.Fail("Not implemented yet");
     }
 
-    [Fact(Skip = "TODO: implement me, then delete this Skip")]
+    [Test]
+    [Ignore("TODO - implement me, then delete this [Ignore] line")]
     public void Register_UsernameShorterThanFourCharacters_ThrowsArgumentException()
     {
         // Should assert the message "Username must contain at least 4 characters".
         Assert.Fail("Not implemented yet");
     }
 
-    [Fact(Skip = "TODO: implement me, then delete this Skip")]
+    [Test]
+    [Ignore("TODO - implement me, then delete this [Ignore] line")]
     public void Register_RepositorySaysUsernameExists_ThrowsArgumentException()
     {
         // Should set up the mock so Exists returns TRUE, then assert the message
@@ -113,28 +124,32 @@ public class Exercise3_UserControllerTests
         Assert.Fail("Not implemented yet");
     }
 
-    [Fact(Skip = "TODO: implement me, then delete this Skip")]
+    [Test]
+    [Ignore("TODO - implement me, then delete this [Ignore] line")]
     public void Register_PasswordShorterThanSixCharacters_ThrowsArgumentException()
     {
         // Should assert the message "Password must contain at least 6 characters".
         Assert.Fail("Not implemented yet");
     }
 
-    [Fact(Skip = "TODO: implement me, then delete this Skip")]
+    [Test]
+    [Ignore("TODO - implement me, then delete this [Ignore] line")]
     public void Register_PasswordWithNoUppercase_ThrowsArgumentException()
     {
         // Should assert the message "Password must contain at least 1 uppercase character".
         Assert.Fail("Not implemented yet");
     }
 
-    [Fact(Skip = "TODO: implement me, then delete this Skip")]
+    [Test]
+    [Ignore("TODO - implement me, then delete this [Ignore] line")]
     public void Register_PasswordWithNoLowercase_ThrowsArgumentException()
     {
         // Should assert the message "Password must contain at least 1 lowercase character".
         Assert.Fail("Not implemented yet");
     }
 
-    [Fact(Skip = "TODO: implement me, then delete this Skip")]
+    [Test]
+    [Ignore("TODO - implement me, then delete this [Ignore] line")]
     public void Register_PasswordWithNoNumber_ThrowsArgumentException()
     {
         // Should assert the message "Password must contain at least 1 number character",
@@ -147,7 +162,8 @@ public class Exercise3_UserControllerTests
     // real, the repository does. So there is far less to check here.
     // ---------------------------------------------------------------------------------
 
-    [Fact(Skip = "TODO: implement me, then delete this Skip")]
+    [Test]
+    [Ignore("TODO - implement me, then delete this [Ignore] line")]
     public void Login_ValidUser_ReturnsUserFromRepository()
     {
         // Should set up the mock so Login returns a user, then assert the controller
@@ -155,21 +171,24 @@ public class Exercise3_UserControllerTests
         Assert.Fail("Not implemented yet");
     }
 
-    [Fact(Skip = "TODO: implement me, then delete this Skip")]
+    [Test]
+    [Ignore("TODO - implement me, then delete this [Ignore] line")]
     public void Login_NullUser_ThrowsArgumentException()
     {
         // Should assert the message "User must not be null".
         Assert.Fail("Not implemented yet");
     }
 
-    [Fact(Skip = "TODO: implement me, then delete this Skip")]
+    [Test]
+    [Ignore("TODO - implement me, then delete this [Ignore] line")]
     public void Login_NullUsernameOrPassword_ThrowsArgumentException()
     {
         // Should assert the message "Username and password must not be null".
         Assert.Fail("Not implemented yet");
     }
 
-    [Fact(Skip = "TODO: implement me, then delete this Skip")]
+    [Test]
+    [Ignore("TODO - implement me, then delete this [Ignore] line")]
     public void Login_EmptyUsernameOrPassword_ThrowsArgumentException()
     {
         // Should assert the message "Username and password must not be empty",
