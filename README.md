@@ -12,10 +12,14 @@ You do not need to know Java to do these. If you have just seen the Java version
 [Java to C# differences](#java-to-c-differences) table near the bottom is the shortest route
 across.
 
-**Before exercise 2, read [`CODE_CORRECTIONS.md`](CODE_CORRECTIONS.md).** The Java original
-these classes were translated from carried two real bugs. Both have been corrected here, and
-that file records what was wrong, what changed, and what is worth noticing. It also flags
-one error that is still live in the worksheet itself.
+**The Java original these classes were translated from carried two real bugs, and both have
+been corrected here.** The exercise code behaves correctly, so every test you write should
+assert correct behaviour, and each correction carries a short comment in the source
+explaining why the code is written the way it is. One error is still live in the worksheet
+itself: the guide's own row 2 for exercise 2 uses a password that is too short for the rule
+it is meant to illustrate, and
+[`tasks/02_testing_exceptions.md`](tasks/02_testing_exceptions.md) reproduces that row with a
+footnote explaining what actually happens.
 
 ---
 
@@ -301,7 +305,6 @@ csharp/
   UnitTestExercises.sln          the solution: src and tests
   global.json                    pins the SDK to the 9.0 band
   README.md                      this file
-  CODE_CORRECTIONS.md            the two bugs in the Java original, and what changed
   tasks/                         THE EXERCISE GUIDE. Start here.
     README.md                    contents page, order of work, how to run
     01_testing_existing_code.md  exercise 1, Calculator

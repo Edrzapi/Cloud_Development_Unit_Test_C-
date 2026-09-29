@@ -15,7 +15,6 @@ namespace Exercises.Exercise2;
 ///
 /// This is a translation of the Java original. The original carried two genuine bugs; both
 /// have been corrected here and the reasoning is commented alongside each one.
-/// See CODE_CORRECTIONS.md for the before and after.
 /// </remarks>
 public class UserService
 {

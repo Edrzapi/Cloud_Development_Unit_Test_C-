@@ -41,8 +41,8 @@ namespace Exercises.Tests;
 ///
 /// THE FULL BRIEF, with the guide's own test plan table and the footnote on row 2, is in
 /// tasks/02_testing_exceptions.md. The two bugs that were corrected in this class are
-/// written up in CODE_CORRECTIONS.md at the root, and both are worth reading before you
-/// start.
+/// commented in the source alongside each correction, and both are worth reading before
+/// you start.
 /// </summary>
 [TestFixture]
 public class Exercise2_UserServiceTests
@@ -196,7 +196,7 @@ public class Exercise2_UserServiceTests
     {
         // Should assert that Register("bobby", "Codes0") returns "bobby". Zero is a digit,
         // so this password satisfies all three character rules and must NOT throw. This is
-        // one of the two boundary cases behind correction 2 in CODE_CORRECTIONS.md: the
+        // one of the two boundary cases behind the corrected character rules: the
         // original rule used [1-9] and rejected it.
         Assert.Fail("Not implemented yet");
     }

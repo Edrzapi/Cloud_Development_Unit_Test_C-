@@ -220,9 +220,11 @@ public class Exercise3_UserControllerTests
         // ArgumentException with the message "Password must contain at least 1 number
         // character", and that Register was never called on the repository. Seven
         // characters, so it clears the length rule and reaches this one.
-        // The two boundary passwords from CODE_CORRECTIONS.md are worth rows of their own
-        // here: "Codes0" and a password with a symbol must both be ACCEPTED, which you
-        // prove by verifying the user reached the repository.
+        // Two boundary passwords are worth rows of their own here. "Codes0", whose only
+        // digit is zero, must be ACCEPTED, because zero is a number. "Cod|es1", which
+        // contains a symbol, must be ACCEPTED too, because none of the three character
+        // rules forbids a symbol. You prove both by verifying the user reached the
+        // repository.
         Assert.Fail("Not implemented yet");
     }
 

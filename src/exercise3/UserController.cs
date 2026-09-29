@@ -12,7 +12,7 @@ namespace Exercises.Exercise3;
 /// ArgumentException, the standard .NET "bad argument value" exception.
 ///
 /// The password rules here are the same three rules used in exercise 2, corrected in the
-/// same way. See CODE_CORRECTIONS.md.
+/// same way.
 /// </remarks>
 public class UserController
 {
