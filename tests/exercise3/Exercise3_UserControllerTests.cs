@@ -6,7 +6,7 @@ namespace Exercises.Tests;
 /// <summary>
 /// EXERCISE 3: mocking in a unit test.
 ///
-/// UserController, in src/Exercises/Exercise3/UserController.cs, depends on
+/// UserController, in src/exercise3/UserController.cs, depends on
 /// IUserRepository. We do not want a real database in a unit test, so we hand the
 /// controller a MOCK repository: a stand-in we fully control, and can interrogate
 /// afterwards about how it was used.

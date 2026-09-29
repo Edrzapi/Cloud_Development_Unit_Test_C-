@@ -8,7 +8,7 @@ namespace Exercises.Tests;
 /// the code it tests, so writing the test is how you decide what the class should do.
 ///
 /// WHAT YOU DO HERE. Implement IUserRepository as a class called ConcreteUserRepository in
-/// src/Exercises/Exercise3/ConcreteUserRepository.cs, storing its users in a private
+/// src/exercise3/ConcreteUserRepository.cs, storing its users in a private
 /// List&lt;User&gt; field, and drive it out of the five stubs below. This is the one place in
 /// these exercises where you add a file to src/. The interface is three methods:
 ///

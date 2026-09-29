@@ -1,6 +1,6 @@
 # Exercise 1: Testing existing code
 
-This exercise uses the **`Calculator`** class found in `src/Exercises/Exercise1/Calculator.cs`,
+This exercise uses the **`Calculator`** class found in `src/exercise1/Calculator.cs`,
 namespace `Exercises.Exercise1`.
 
 The guide says to clone the exercise repository and import the project into Eclipse. In
@@ -10,7 +10,7 @@ VS Code with the C# Dev Kit, or Rider, or just work in a terminal with `dotnet b
 
 | The guide says | Here |
 | --- | --- |
-| Exercise: the `exercise1` package | `src/Exercises/Exercise1/Calculator.cs` |
+| Exercise: the `exercise1` package | `src/exercise1/Calculator.cs` |
 
 ---
 
@@ -54,7 +54,7 @@ useful. Say which you think it is.
 The `Calculator` class has already been created. Use your test plan to guide the
 development of tests for the methods of this class.
 
-**The file you edit:** `tests/Exercises.Tests/Exercise1_CalculatorTests.cs`
+**The file you edit:** `tests/exercise1/Exercise1_CalculatorTests.cs`
 
 One worked example is already written and passing. Copy its shape. The other twelve tests
 are stubs, each carrying a `[Test]` attribute with an `[Ignore("TODO - ...")]` attribute

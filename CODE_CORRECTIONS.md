@@ -17,7 +17,7 @@ better lessons than anything you will write a test for today.
 
 ## Correction 1: `UserService.Login` looked users up by password, not by username
 
-**Where:** `src/Exercises/Exercise2/UserService.cs`, in `Login`.
+**Where:** `src/exercise2/UserService.cs`, in `Login`.
 
 **Was**
 
@@ -69,7 +69,7 @@ with `Register`, which trims before storing and returns the trimmed name.
 - Tests that only check "does it throw" would have passed throughout. It is asserting the
   **message and the type** that pins the behaviour down.
 
-**The stubs in `tests/Exercises.Tests/Exercise2_UserServiceTests.cs` that cover it**
+**The stubs in `tests/exercise2/Exercise2_UserServiceTests.cs` that cover it**
 
 | Test | Proves |
 | --- | --- |
@@ -84,8 +84,8 @@ A fourth row is worth adding to your own plan: log in with an untrimmed username
 
 ## Correction 2: the password character rules used a broken regular expression
 
-**Where:** `src/Exercises/Exercise2/UserService.cs` **and**
-`src/Exercises/Exercise3/UserController.cs`. Both classes carry the same three rules.
+**Where:** `src/exercise2/UserService.cs` **and**
+`src/exercise3/UserController.cs`. Both classes carry the same three rules.
 
 **Was**
 
@@ -208,7 +208,7 @@ code never reaches the number check, and the message is actually
 `"Password must contain at least 6 characters"`.
 
 **What this repository does about it:** the worked example in
-`tests/Exercises.Tests/Exercise2_UserServiceTests.cs` uses `"Codesss"` (seven characters, no
+`tests/exercise2/Exercise2_UserServiceTests.cs` uses `"Codesss"` (seven characters, no
 digit), which is what the guide meant, and carries a comment saying so.
 [`tasks/02_testing_exceptions.md`](tasks/02_testing_exceptions.md) reproduces the guide's
 table faithfully and adds a footnote underneath explaining what actually happens.

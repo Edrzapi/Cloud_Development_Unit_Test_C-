@@ -1,7 +1,7 @@
 # Exercise 2: Testing exceptions
 
 This exercise uses the **`UserService`** class defined in
-`src/Exercises/Exercise2/UserService.cs`, namespace `Exercises.Exercise2`.
+`src/exercise2/UserService.cs`, namespace `Exercises.Exercise2`.
 
 The guide says to clone the exercise repository and import the project into Eclipse. In
 this repository the code is already here. Open `UnitTestExercises.sln` in Visual Studio,
@@ -9,7 +9,7 @@ VS Code with the C# Dev Kit, or Rider, or work in a terminal.
 
 | The guide says | Here |
 | --- | --- |
-| Repository: the `exercise2` package | `src/Exercises/Exercise2/UserService.cs` |
+| Repository: the `exercise2` package | `src/exercise2/UserService.cs` |
 
 **One mapping to know.** Java's `IllegalArgumentException` becomes .NET's
 `ArgumentException`, and Java's bare `RuntimeException` becomes `InvalidOperationException`.
@@ -66,7 +66,7 @@ row for every `throw`. There are more than you would guess, and two of them are
 The `UserService` class has already been created. Use your test plan to guide the
 development of tests for the methods of this class.
 
-**The file you edit:** `tests/Exercises.Tests/Exercise2_UserServiceTests.cs`
+**The file you edit:** `tests/exercise2/Exercise2_UserServiceTests.cs`
 
 The assertion you want is:
 

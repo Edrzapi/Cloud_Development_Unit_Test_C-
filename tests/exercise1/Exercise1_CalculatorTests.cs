@@ -5,7 +5,7 @@ namespace Exercises.Tests;
 /// <summary>
 /// EXERCISE 1: testing existing code.
 ///
-/// The Calculator in src/Exercises/Exercise1/Calculator.cs already exists and already works.
+/// The Calculator in src/exercise1/Calculator.cs already exists and already works.
 /// This exercise is about writing tests for code you did not write: reading it, deciding
 /// what is worth checking, and proving it behaves as documented.
 ///

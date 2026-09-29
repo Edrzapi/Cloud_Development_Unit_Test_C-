@@ -1,12 +1,12 @@
 # Exercise 3: Mocking in a unit test
 
 This exercise relies on the **`User`** and **`UserController`** classes and the
-**`IUserRepository`** interface, all in `src/Exercises/Exercise3/`, namespace
+**`IUserRepository`** interface, all in `src/exercise3/`, namespace
 `Exercises.Exercise3`.
 
 | The guide says | Here |
 | --- | --- |
-| Repository: the `exercise3` package | `src/Exercises/Exercise3/` |
+| Repository: the `exercise3` package | `src/exercise3/` |
 | `UserRepository` interface | `IUserRepository.cs`. The .NET convention prefixes interface names with `I`, which also leaves the plain name free for the stretch task's implementation |
 
 ---
@@ -35,7 +35,7 @@ is now part of the inputs, so it belongs in the plan.
 
 Implement your unit test plan, as done with the previous examples.
 
-**The file you edit:** `tests/Exercises.Tests/Exercise3_UserControllerTests.cs`
+**The file you edit:** `tests/exercise3/Exercise3_UserControllerTests.cs`
 
 Be careful when writing your tests for the `Login` and `Register` methods. It is expected
 that you mock interactions with the repository.

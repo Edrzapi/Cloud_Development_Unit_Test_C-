@@ -42,10 +42,10 @@ the same job, and a plain text editor is enough.
 
 | | Task | You edit |
 | --- | --- | --- |
-| 1 | [Testing existing code](01_testing_existing_code.md) | `tests/Exercises.Tests/Exercise1_CalculatorTests.cs` |
-| 2 | [Testing exceptions](02_testing_exceptions.md) | `tests/Exercises.Tests/Exercise2_UserServiceTests.cs` |
-| 3 | [Mocking in a unit test](03_mocking.md) | `tests/Exercises.Tests/Exercise3_UserControllerTests.cs` |
-| 4 | [Test-driven development](04_stretch_tdd_repository.md) (stretch) | `tests/Exercises.Tests/Exercise3_Stretch_ConcreteUserRepositoryTests.cs` and a new class in `src/` |
+| 1 | [Testing existing code](01_testing_existing_code.md) | `tests/exercise1/Exercise1_CalculatorTests.cs` |
+| 2 | [Testing exceptions](02_testing_exceptions.md) | `tests/exercise2/Exercise2_UserServiceTests.cs` |
+| 3 | [Mocking in a unit test](03_mocking.md) | `tests/exercise3/Exercise3_UserControllerTests.cs` |
+| 4 | [Test-driven development](04_stretch_tdd_repository.md) (stretch) | `tests/exercise3/Exercise3_Stretch_ConcreteUserRepositoryTests.cs` and a new class in `src/` |
 
 Do them in order. Exercise 3 reuses the test plan you wrote for exercise 2, and the stretch
 task builds the repository that exercise 3 mocked.
@@ -66,9 +66,9 @@ The guide links to a GitHub repository for the exercise code. This repository re
 
 | The guide says | Here it is |
 | --- | --- |
-| Exercise repository, `exercise1` package | `src/Exercises/Exercise1/` |
-| Exercise repository, `exercise2` package | `src/Exercises/Exercise2/` |
-| Exercise repository, `exercise3` package | `src/Exercises/Exercise3/` |
+| Exercise repository, `exercise1` package | `src/exercise1/` |
+| Exercise repository, `exercise2` package | `src/exercise2/` |
+| Exercise repository, `exercise3` package | `src/exercise3/` |
 
 The solutions are not in this repository. Your trainer has them. The whole point of the
 exercise is the plan you write and the tests you write from it, and there is nothing here

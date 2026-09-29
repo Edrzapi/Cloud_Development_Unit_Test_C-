@@ -134,11 +134,11 @@ Run `dotnet test` again. Skipped goes down by one, passed goes up by one.
 
 ## What code you are actually working with
 
-Everything under `src/Exercises/` is the **code under test**. Read it, do not change it. The
+Everything under `src/` is the **code under test**. Read it, do not change it. The
 one exception is the stretch task, where you add a new class of your own to
-`src/Exercises/Exercise3/`.
+`src/exercise3/`.
 
-### `src/Exercises/Exercise1/Calculator.cs`
+### `src/exercise1/Calculator.cs`
 
 `public class Calculator`, namespace `Exercises.Exercise1`.
 
@@ -153,7 +153,7 @@ Everything is `double`, so the borderline values worth planning rows for are
 `double.MaxValue`, `double.MinValue`, `double.Epsilon`, `double.PositiveInfinity` and
 `double.NegativeInfinity`.
 
-### `src/Exercises/Exercise2/UserService.cs`
+### `src/exercise2/UserService.cs`
 
 `public class UserService`, namespace `Exercises.Exercise2`. It stores users in a private
 `Dictionary<string, string>` keyed by username.
@@ -185,7 +185,7 @@ fails, so an input that breaks two rules only ever reports the first:
 that name, and `ArgumentException("Invalid password supplied")` when the password does not
 match. Note that one of those is **not** an `ArgumentException`.
 
-### `src/Exercises/Exercise3/User.cs`
+### `src/exercise3/User.cs`
 
 `public class User`, namespace `Exercises.Exercise3`. A plain record of a user.
 
@@ -194,7 +194,7 @@ match. Note that one of those is **not** an `ArgumentException`.
 - it overrides `Equals` and `GetHashCode`, so `Assert.That(actual, Is.EqualTo(expected))`
   compares two users **field by field**. You never have to compare properties one at a time.
 
-### `src/Exercises/Exercise3/IUserRepository.cs`
+### `src/exercise3/IUserRepository.cs`
 
 `public interface IUserRepository`. **This is the type you mock in exercise 3**, and the type
 you implement for the stretch task.
@@ -205,7 +205,7 @@ you implement for the stretch task.
 | `User Register(User user)` | stores the user, returns the stored instance |
 | `User Login(User user)` | returns the matching stored user |
 
-### `src/Exercises/Exercise3/UserController.cs`
+### `src/exercise3/UserController.cs`
 
 `public class UserController`. Same validation as `UserService`, but storage is delegated to
 a repository handed in through the constructor.
@@ -309,18 +309,25 @@ csharp/
     03_mocking.md                exercise 3, UserController with the repository mocked
     04_stretch_tdd_repository.md the stretch task, TDD a ConcreteUserRepository
     TEST_PLAN_TEMPLATE.md        the test plan tables to fill in first
-  src/Exercises/                 the code under test. Do not change it.
-    Exercise1/Calculator.cs
-    Exercise2/UserService.cs
-    Exercise3/User.cs
-    Exercise3/IUserRepository.cs
-    Exercise3/UserController.cs
-  tests/Exercises.Tests/         YOUR WORK GOES HERE
-    Exercise1_CalculatorTests.cs
-    Exercise2_UserServiceTests.cs
-    Exercise3_UserControllerTests.cs
-    Exercise3_Stretch_ConcreteUserRepositoryTests.cs
+  src/                           the code under test. Do not change it.
+    Exercises.csproj             the exercise project
+    exercise1/Calculator.cs
+    exercise2/UserService.cs
+    exercise3/User.cs
+    exercise3/IUserRepository.cs
+    exercise3/UserController.cs
+  tests/                         YOUR WORK GOES HERE
+    Exercises.Tests.csproj       the test project
+    exercise1/Exercise1_CalculatorTests.cs
+    exercise2/Exercise2_UserServiceTests.cs
+    exercise3/Exercise3_UserControllerTests.cs
+    exercise3/Exercise3_Stretch_ConcreteUserRepositoryTests.cs
 ```
+
+The exercise folders are lowercase `exercise1`, `exercise2` and `exercise3` on purpose: C#
+would normally PascalCase them, but these exercises ship in Java, Python and C# editions and
+the three repositories are laid out identically so the class can follow any of them. The
+namespaces inside keep the usual C# casing, `Exercises.Exercise1` and so on.
 
 The solutions are not in this repository. Your trainer has them.
 
@@ -335,23 +342,23 @@ the plan first is the exercise. The tests are just the plan turned into C#.
 
 **Exercise 1, testing existing code.** Plan and then write at least three tests per
 `Calculator` method, covering the borderline values as well as ordinary ones. You edit
-`tests/Exercises.Tests/Exercise1_CalculatorTests.cs`.
+`tests/exercise1/Exercise1_CalculatorTests.cs`.
 
 **Exercise 2, testing exceptions.** Plan and then write a test for every exception
 `UserService.Register` and `UserService.Login` can throw. Assert the **message** as well as
 the type: several different rules all throw `ArgumentException`, and only the message tells
 them apart. Watch the order the rules are checked in. You edit
-`tests/Exercises.Tests/Exercise2_UserServiceTests.cs`.
+`tests/exercise2/Exercise2_UserServiceTests.cs`.
 
 **Exercise 3, mocking.** `UserController` hands storage to an `IUserRepository`. In a unit
 test you replace that repository with a **mock**: an object you create, tell how to behave,
 and then interrogate afterwards about how it was used. You edit
-`tests/Exercises.Tests/Exercise3_UserControllerTests.cs`.
+`tests/exercise3/Exercise3_UserControllerTests.cs`.
 
 **Stretch task, test driven.** Plan and then build a real `ConcreteUserRepository`
 implementing `IUserRepository`, storing its users in a `List<User>`. Write the test first,
 watch it fail, write the smallest implementation that makes it pass, then repeat. Skeletons
-are in `tests/Exercises.Tests/Exercise3_Stretch_ConcreteUserRepositoryTests.cs`, and this is
+are in `tests/exercise3/Exercise3_Stretch_ConcreteUserRepositoryTests.cs`, and this is
 the one place where you add a file to `src/`.
 
 ---

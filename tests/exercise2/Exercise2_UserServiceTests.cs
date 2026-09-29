@@ -5,7 +5,7 @@ namespace Exercises.Tests;
 /// <summary>
 /// EXERCISE 2: testing exceptions.
 ///
-/// UserService, in src/Exercises/Exercise2/UserService.cs, validates a registration and a
+/// UserService, in src/exercise2/UserService.cs, validates a registration and a
 /// login and rejects bad input by throwing. This exercise is about proving each rejection
 /// happens for the RIGHT reason: most of these throws are the same ArgumentException type,
 /// and only the message tells them apart.
